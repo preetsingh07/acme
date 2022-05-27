@@ -11,22 +11,46 @@
 <div class="row  offset-md-3 offset-sm-4">
     <div class="col "> 
         <div class="card bg-primary text-white  " style="border-radius: 1rem; width: 500px; ">
-    <div class="card-body p-5 text-center">
+    <div class="card-body p-4 text-center">
 <h1 >Register</h1>
-<p class="text-white-50 mb-5">Please enter details below</p>
-<form>
-    <label style="margin-top: 1rem;" >Firstname</label><br>
-    <input id="email" /><br>
-    <label style="margin-top: 1rem;" >Lastname</label><br>
-    <input id="email" /><br>
+<p class="text-white-50 mb-2">Please enter details below</p>
+<form class="needs-validation" novalidate>
 
-<label style="margin-top: 1rem;" >Username/Email</label><br>
-<input id="email" /><br>
-<label style="margin-top: 1rem;" >Password</label><br>
-<input type="password" id="pass"  /><br>
-<label style="margin-top: 1rem;" >Confirm Password</label><br>
-<input type="password" id="email" /><br>
-<button class="btn btn-primary btn-outline-light" style="margin-top: 1rem;">Register</button>
+    <label class="form-label"  >Firstname</label><br>
+    <input id="fName" class="form-control" required/><br>
+    <div class="invalid-feedback" style="color: red;">
+        Please Enter First Name !
+      </div>
+
+
+    <label class="form-label"  >Lastname</label><br>
+    <input id="lName" class="form-control" required/><br>
+    <div class="invalid-feedback" style="color: red;">
+        Please Enter Last Name !
+      </div>
+
+
+    <label class="form-label" >Username/Email</label><br>
+    <input id="email" class="form-control" required/><br>
+    <div class="invalid-feedback" style="color: red;">
+        Please Enter Email !
+      </div>
+    <label class="form-label"  >Password</label><br>
+    <input type="password" id="pass" class="form-control" required/><br>
+    <div class="invalid-feedback" style="color: red;">
+        Please Enter Password !
+      </div>
+    <label class="form-label" " >Confirm Password</label><br>
+    <input type="password" id="cPass"class="form-control" required/><br>
+    <div class="invalid-feedback" style="color: red;">
+        Please Enter Password !
+      </div>
+
+
+<button class="btn btn-primary btn-outline-light" type="submit"   onclick="signup()">
+    Register
+</button>
+
 </form>
 </div>
 </div>

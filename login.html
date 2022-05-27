@@ -13,12 +13,22 @@
         <div class="card-body p-5 text-center">
     <h1 >Login</h1>
     <p class="text-white-50 mb-5">Please enter your email and password!</p>
-    <form>
-<label style="margin-top: 2rem;" >Username/Email</label><br>
-<input id="email" /><br>
-<label style="margin-top: 1rem;" >Password</label><br>
-<input type="password" id="pass"  /><br>
-<button class="btn btn-primary btn-outline-light" onclick="login()" style="margin-top: 1rem;">Submit</button>
+    <form class="needs-validation" novalidate>
+<label for="email" class="form-label" style="margin-top: 2rem;" >Username/Email</label><br>
+<input id="email" class="form-control" required/>
+<div class="invalid-feedback" style="color: red;">
+    Please Enter Email !
+  </div>
+
+
+    <label class="form-label" style="margin-top: 2rem;" >Password</label><br>
+    <input type="password" id="pass" class="form-control" required/>
+    <div class="invalid-feedback" style="color: red;">
+        Please Enter Password !
+      </div>
+
+
+<button class="btn btn-primary btn-outline-light" onclick="login()" type="submit" style="margin-top: 1rem;">Submit</button>
 </form>
 <div>
     <p class="mb-0">Don't have an account? <a href="/signup.html" class="text-white-50 fw-bold">Sign Up</a>
