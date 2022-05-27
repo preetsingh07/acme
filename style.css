@@ -1,0 +1,64 @@
+@media screen and (max-width: 480px) {
+#card.col.mb-2 {
+    
+    width: 75%;
+}
+}
+
+
+
+table.table tr td div.btn-primary { display:none;}
+table.table tr:hover td div.btn-primary { display:inline-block;}
+
+
+/* navbar open left */
+.navbar-collapse {
+    position: relative;
+    top: 50px;
+    left: 0; 
+    padding-bottom: 15px;
+   
+  }
+  
+  .navbar-collapse.collapsing {
+    left: -75%;
+    transition: height 0s ease;
+    
+
+  }
+  
+  .navbar-collapse.show {
+    left: 0;
+    transition: left 100ms ease-in-out;
+
+  }
+  
+  .navbar-toggler.collapsed~.navbar-collapse {
+    transition: left 100ms ease-in-out;
+  }
+
+
+ 
+  @media screen and (max-width: 768px) {
+   #leftBody {
+      background-color: white;
+
+      
+  }
+      #quoteTable {
+        
+      }
+    }
+
+    #tableBodyQuotes tr{
+      height: 50px;
+    }
+
+    #sideBar{
+      background-color:#3b91f7;
+      height: 657px;
+
+    }
+#colHide{
+  display: none;
+}
