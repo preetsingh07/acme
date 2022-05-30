@@ -24,13 +24,13 @@
 <div class="row w-100" style="background-color: #F0F2F7; ">
  
     <div class=" d-flex flex-column  col-2 d-none d-md-block text-white" id="sideBar">
-        <div class="row bg-light text-primary mt-5 ps-4" style="height: 40px;font-weight: bold;" >
-            <label class="pt-2"> ACME Corp</label>
+        <div class="row bg-light text-primary mt-5 ps-4" style="height: 50px;font-weight: bold;" >
+            <label class="pt-2" style="font-size:  x-large;"> ACME Corp</label>
           </div>
       
     
     
-          <ul class="nav nav-pills flex-column mb-auto mt-3">
+          <ul class="nav nav-pills flex-column mb-auto mt-5">
             <li class="nav-item">
               <a href="/sidebar.html" class="nav-link text-white" aria-current="page">
                   <!-- <svg class="bi me-2" width="16" height="16" fill="currentColor"><use xlink:href="#grid"></use></svg> -->
@@ -91,11 +91,11 @@
           </ul>
     </div>
 
-<div class="col-lg-9 col-md-9 col-sm-10 col-12 ms-3 " id="leftBody">  
-             <header class="d-flex  mt-3 py-3 bg-light d-none d-md-block" style="height: 50px;">
+<div class="col-lg-10 col-xl-10 col-md-9 col-sm-10 col-12" id="leftBody">  
+             <header class="d-flex  mt-2 py-3 bg-light d-none d-md-block" style="height: 50px;">
         <div class="row w-100">
             <div class="col-4 d-none d-md-block col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                Hi! Welcome back <span style="font-weight: bold;">Devion</span> 
+               <span class="ms-4">Hi! Welcome back </span>  <span style="font-weight: bold;">Devion</span> 
             </div>
     <div class="col-4 d-none d-md-block col-md-3 col-lg-4 col-xl-4 col-xxl-4">
         1908 progress way,lowa-52202,USA
@@ -198,9 +198,15 @@
  <div class="container-fluid bg-white mt-4 " >
       <div class="row">
           <div class="col"> <label style="font-weight: bold;margin-top: 1rem;">Quotes</label> <br>
-Account:test for community</div>
-          <div class="col"><div class="btn bg-primary text-white mt-3" style="float: right;">
-            Convert to Order</div>
+            Account:test for community</div>
+            
+          <div class="col">
+            <div class="btn bg-primary text-white mt-3 offset-6" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                Edit Quote
+            </div>
+              <div class="btn bg-primary text-white mt-3" style="float: right;">
+            Convert to Order
+        </div>
       </div>
     </div>
 <div class="container  mt-2 mb-2" style=" border: 1px solid #5590d8;background: #ebf4ff;">
@@ -237,7 +243,39 @@ Account:test for community</div>
 
 </div>
    
-
+  <!-- Modal -->
+  <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Quote</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <label>Quote Name :</label>
+          <input class="ms-5"/> <br>
+          <label class="mt-4">Status:</label> 
+          <select name=" mt-4" id="status" style="margin-left: 130px;">
+            <option value="">Draft</option>
+            <option value="">Needs Review</option>
+            <option value="">In Review</option>
+            <option value="">Approved</option>
+            <option value="">Rejected</option>
+            <option value="">Presented</option>
+            <option value="">Accepted</option>
+            <option value="">Denied</option>
+        </select><br>
+        <label class="mt-5" >Product :</label><br>
+        <label>Quantity :</label>
+        <input type="number" class="mt-5" id="quantity" name="quantity" min="1" max="500" style="margin-left: 7rem;">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="js/bootstrap.bundle.js"></script>
   <script src="dashboard.js"></script>

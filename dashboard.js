@@ -6,6 +6,8 @@ const xhr = new XMLHttpRequest();
     var quoteNum;
     var quoteNum2;
     var h;
+
+
 function data(){
 
     countCases();
@@ -34,7 +36,7 @@ if (xhr.readyState == xhr.DONE) {
     if (xhr.status == 200) {
         //console.log("hii")
         const qAmount=JSON.parse((xhr.responseText)) ;
-
+        document.getElementById("quoteTotal").innerHTML =("$ "+qAmount.amount) ;
         
     }
 }
@@ -73,7 +75,7 @@ const details=JSON.parse(xhr.responseText);
             <td >${details[i].name}</td>
             <td>${details[i].total_amount}</td>
             <td>${details[i].date}</td>
-            <td>${details[i].status}<div class="btn-primary p-1" onclick="sendData()" style="float: right;">view details</div></td>
+            <td>${details[i].status}<div class="btn-primary p-1" id="${details[i].quote_number}" onclick="sendData(${details[i].quote_number})" style="float: right;">view details</div></td>
             </tr>
             `;
             document.getElementById("tableBodyQuotes").innerHTML +=tableString;
@@ -85,16 +87,20 @@ const details=JSON.parse(xhr.responseText);
 
 //quotes details
 function quotesDetails(){
-//var y=sendData();
-
-var val = sessionStorage.getItem("val");
-console.log(val);
 
 
+//var val = sessionStorage.getItem("val");
+//onsole.log(val);
+
+var x=(location.search);
+var r=x.substring(10);
+
+
+//console.log(x);
 
 
     const xhr = new XMLHttpRequest();
-    var url= `http://localhost:5000/quoteDetails?quote_number=${val}`;
+    var url= `http://localhost:5000/quoteDetails?quote_number=${r}`;
     xhr.open('GET',url,false);
     xhr.send();
 
@@ -102,7 +108,7 @@ console.log(val);
 //console.log(xhr.responseText)
 
 const details=JSON.parse(xhr.responseText);
-console.log(details);
+//console.log(details);
 const productArr =details[0].product;
 
 var qdName=details[0].name;
@@ -126,7 +132,7 @@ document.getElementById("qdOwner").innerHTML =(qdAccountId) ;
             <td>${details[0].product[i].quantity}</td>
             <td>$ ${details[0].product[i].unit_price}</td>
             </tr>
-            `;
+            `;0
             document.getElementById("tableBodyProduct").innerHTML +=tableString;
     }
 
@@ -159,16 +165,19 @@ if (y.style.display === "none") {
 }
 
 
-function sendData() {
-    var quoteNum2 = document.getElementById("quoteTable").rows[6].cells[0].innerHTML;
-       //var url = 'http://path_to_your_html_files/next.html?name=' + encodeURIComponent(b);
+function sendData(itemNum) {
 
+    //var quoteNum2 = document.getElementById("quoteTable").rows[i].cells[0].innerHTML;
+      // var url = 'http://path_to_your_html_files/next.html?name=' + encodeURIComponent(b);
+
+        
     //document.location.href = url;
 
-console.log("-quoteNum-"+quoteNum2)
-window.location.href ="quotes2.html";
 
+ let abc=window.location.href =`quotes2.html?quoteNum=${itemNum}`;
 
-sessionStorage.setItem("val", quoteNum2);
+ console.log("-quoteNum-"+abc)
+
+//sessionStorage.setItem("val", quoteNum2);
 
 }

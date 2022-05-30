@@ -1,7 +1,11 @@
 @media screen and (max-width: 480px) {
 #card.col.mb-2 {
-    
+  
     width: 75%;
+}
+#card1.col.mb-2 {
+  
+  width: 75%;
 }
 }
 
@@ -44,21 +48,72 @@ table.table tr:hover td div.btn-primary { display:inline-block;}
       background-color: white;
 
       
-  }
-      #quoteTable {
-        
-      }
     }
+      #card1{
+        
+        margin-left: 2rem;
+      }
+      #card{
+        
+        margin-left: 2rem;
+      }
+     #userHide1{
+       --bs-gutter-x: 0rem;
+       margin-right: 0rem;
+       margin-left: 2rem;
+     }
 
-    #tableBodyQuotes tr{
+    }
+    @media screen and (min-width: 768px) {
+      #card1{
+        margin-left: 2rem;
+      }
+    
+       }
+
+
+ #tableBodyQuotes tr{
       height: 50px;
     }
 
-    #sideBar{
+ #sideBar{
       background-color:#3b91f7;
-      height: 657px;
+      height: 100vh;
 
     }
 #colHide{
   display: none;
 }
+
+#overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  opacity:1;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: start;
+}
+
+
+#overlayRight {
+  position: absolute; 
+  bottom: 0;
+  right: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 50%;
+  height: 100%;
+  opacity:1;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: start;
+}
+
+

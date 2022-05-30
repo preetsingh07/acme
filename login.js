@@ -15,13 +15,13 @@ var loginPass = document.getElementById("pass").value;
   // Loop over them and prevent submission
   Array.prototype.slice.call(forms)
     .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
+      form.addEventListener('reset', function (event) {
         if (!form.checkValidity()) {
-          event.preventDefault()
+         event.preventDefault()
           event.stopPropagation()
         }
 
-        form.classList.add('was-validated')
+      form.classList.add('was-validated')
        
       }, false)
     })
@@ -39,7 +39,7 @@ if(loginEmail != "" && loginPass != ""){
         if (xhr.status == 200) {
             if(xhr.responseText == '{"status":"login successfull"}'){
                 console.log("hi");
-            window.location.href =" sidebar.html";
+            location.href ="sidebar.html";
         }else{
             alert("Incorrect Email or Password")
         }
@@ -53,26 +53,29 @@ function signup(){
     var email = document.getElementById("email").value;
     var pass = document.getElementById("pass").value;
     var ConfirmPass = document.getElementById("cPass").value;
-    const xhr = new XMLHttpRequest()
+    const xhr = new XMLHttpRequest();
 
-
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-  
+    (function () {
+      'use strict'
+    
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+    
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('reset', function (event) {
+            if (!form.checkValidity()) {
+             event.preventDefault()
+              event.stopPropagation()
+            }
+    
           form.classList.add('was-validated')
-        }, false)
-      })
+           
+          }, false)
+        })
+    })();
+    
       
 
 var url='http://localhost:5000/signup';
@@ -81,23 +84,23 @@ console.log(data);
     if(pass != ConfirmPass){
     alert("Both passwords should be same");
 }else{
-    xhr.open('POST', url);
+    xhr.open('POST', url,false);
     xhr.setRequestHeader('content-type', 'application/json');
     xhr.send(data);
      
     
     //console.log(xhr)
     
-        if (this.readyState === this.DONE) {
+        if (xhr.readyState === xhr.DONE) {
         //  console.log(this.responseText)
         if (xhr.status == 200) {
                     if(xhr.responseText == '{"status":"signup successfull"}'){
-                    window.location.href ="login.html";
+                    console.log("hi");
+                      location.href ="login.html";
                 }else{
                     alert("signup unsuccessfull")
                 }
                 }
-
         }
        
 }
